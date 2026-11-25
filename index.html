@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gil Ralló</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FBFAF8;
+    --surface: #FFFFFF;
+    --ink: #272420;
+    --ink-soft: #6B6560;
+    --rule: #E4E0D9;
+    --accent: #9C5A33;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1A1816;
+      --surface: #211F1C;
+      --ink: #EFEAE3;
+      --ink-soft: #9C9690;
+      --rule: #37332E;
+      --accent: #D79463;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1A1816;
+    --surface: #211F1C;
+    --ink: #EFEAE3;
+    --ink-soft: #9C9690;
+    --rule: #37332E;
+    --accent: #D79463;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Work Sans', -apple-system, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 700px; margin: 0 auto; padding: 80px 28px 100px; }
+
+  .masthead { margin-bottom: 64px; }
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: clamp(2.4rem, 7vw, 3.4rem);
+    margin: 0 0 6px;
+    text-wrap: balance;
+    letter-spacing: -0.015em;
+  }
+  .role {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .contact a { color: var(--ink-soft); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  .contact a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+  section { margin-bottom: 52px; }
+  h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  p.summary { max-width: 62ch; font-size: 1.05rem; }
+
+  .skills-row { display: flex; flex-direction: column; gap: 12px; }
+  .skills-row .line { display: flex; gap: 14px; font-size: 0.97rem; }
+  .skills-row .line .label {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    color: var(--accent);
+    flex: 0 0 150px;
+  }
+
+  .role-block { margin-bottom: 34px; }
+  .role-block:last-child { margin-bottom: 0; }
+  .role-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+  .role-head h3 { margin: 0; font-size: 1.12rem; font-weight: 600; }
+  .role-head time { font-size: 0.86rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .org { font-style: italic; font-family: 'Fraunces', Georgia, serif; color: var(--ink-soft); font-size: 0.98rem; margin-top: 2px; }
+  .role-intro { color: var(--ink-soft); margin: 10px 0 12px; font-size: 0.96rem; }
+  ul.bullets { margin: 0; padding-left: 20px; }
+  ul.bullets li { margin-bottom: 9px; }
+  ul.bullets li::marker { color: var(--accent); }
+  .sub-label { font-style: italic; font-family: 'Fraunces', Georgia, serif; color: var(--ink-soft); font-size: 0.92rem; margin: 16px 0 8px; }
+
+  .edu-lang { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+  @media (max-width: 560px) { .edu-lang { grid-template-columns: 1fr; gap: 28px; } }
+  .edu-lang h4 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; margin: 0 0 4px; font-size: 1.02rem; }
+  .lang-row { display: flex; justify-content: space-between; font-size: 0.94rem; padding: 6px 0; border-bottom: 1px solid var(--rule); }
+  .lang-row:last-child { border-bottom: none; }
+
+  .project-card { border-left: 2px solid var(--accent); padding-left: 22px; }
+  .project-card h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; margin: 0 0 4px; font-size: 1.15rem; }
+  .project-card .stack { font-size: 0.82rem; color: var(--ink-soft); margin: 6px 0 12px; font-style: italic; }
+  .project-card p { margin: 0; font-size: 0.97rem; }
+
+  footer { margin-top: 64px; padding-top: 22px; border-top: 1px solid var(--rule); font-size: 0.85rem; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<main>
+  <div class="masthead">
+    <h1>Gil Ralló Generó</h1>
+    <div class="role">Software Engineer</div>
+    <div class="contact">
+      <span>Eindhoven, Netherlands</span>
+      <a href="mailto:gil.rallo01@gmail.com">gil.rallo01@gmail.com</a>
+      <a href="https://www.linkedin.com/in/gil-rall%C3%B3-gener%C3%B3-45435b258/">LinkedIn</a>
+    </div>
+  </div>
+
+  <section>
+    <p class="summary">I am a software engineer passionate about understanding people, their problems, and how to solve them. I see myself as a bridge between humans and technology, in a world where listening and defining the problem well is already half of the solution. Active, curious and able to adapt easily to new environments and situations: that is how I always manage to reach all the goals I set for myself.</p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-row">
+      <div class="line"><span class="label">Backend &amp; data</span><span>Python (Django), PostgreSQL, MySQL</span></div>
+      <div class="line"><span class="label">Frontend</span><span>React.js, HTML, CSS, JavaScript, Figma, UI/UX design</span></div>
+      <div class="line"><span class="label">AI</span><span>Multi-model LLM APIs, prompt engineering, agentic development</span></div>
+      <div class="line"><span class="label">DevOps &amp; testing</span><span>Docker, Azure, Git, Playwright (E2E testing)</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="role-block">
+      <div class="role-head"><h3>Software Engineer</h3><time>Feb 2023 — Present</time></div>
+      <div class="org">Elephants in the Room, Eindhoven</div>
+      <p class="role-intro">Started as an intern, grew into the main full-time engineer. Responsible for the app since day one, frontend and backend.</p>
+      <ul class="bullets">
+        <li>Multiplied productivity (PRs merged ×22, commits ×7.5, lines added ×15) by managing and orchestrating a multi-agent development system: defining the work, judging every output and testing before release. Same quality at a fraction of the time — work that used to take months now takes a few days.</li>
+        <li>Own the whole development process: build features, integrate the work of the whole team, and take every change through testing (Playwright end-to-end, Django unit tests in CI/CD), bug reporting and prioritisation. Responsible for every release — server changes, migrations and team coordination.</li>
+      </ul>
+      <div class="sub-label">Earlier, before agent-assisted development</div>
+      <ul class="bullets">
+        <li>Built an LLM-powered consultant chatbot that conducts online interviews for 5+ client organisations, using a Django/PostgreSQL backend and React.js frontend.</li>
+        <li>Designed an algorithm combining LLMs and clustering methods to analyse conversations from 100+ employees, identifying the most common problems in their organisations and the solutions most employees prefer.</li>
+        <li>Led UI/UX design in Figma and presented results and product demos to customers and stakeholders.</li>
+        <li>Mentored and guided 5+ interns through their graduation projects.</li>
+      </ul>
+    </div>
+    <div class="role-block">
+      <div class="role-head"><h3>Board Member (Secretary)</h3><time>Sep 2024 — Sep 2025</time></div>
+      <div class="org">Tantalus Student Basketball Association, Eindhoven</div>
+      <ul class="bullets">
+        <li>Secretary of a student association with 10 teams and 150+ members united by basketball.</li>
+        <li>Handled all internal and external communications of the association.</li>
+        <li>Organised events for members to grow the basketball community and bring people together.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>A project of mine</h2>
+    <div class="project-card">
+      <h3>Food Time</h3>
+      <div class="stack">Flutter · Supabase · PostgreSQL · Firebase Cloud Messaging · Cloudflare</div>
+      <p>A mobile app for sharing meals with friends inside private groups ("tables") — post a photo of what you're eating, react, comment, and get notified. Built solo end to end, including an LLM-based check that keeps posts on-topic. Currently in closed testing on Google Play.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education &amp; languages</h2>
+    <div class="edu-lang">
+      <div>
+        <h4>BSc Computer Science</h4>
+        <div style="color: var(--ink-soft); font-size: 0.94rem;">Polytechnic University of Catalunya<br>Sep 2019 — Jun 2023</div>
+      </div>
+      <div>
+        <div class="lang-row"><span>Catalan</span><span>native</span></div>
+        <div class="lang-row"><span>Spanish</span><span>native</span></div>
+        <div class="lang-row"><span>English</span><span>C1</span></div>
+        <div class="lang-row"><span>Dutch</span><span>B1</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>gil.rallo01@gmail.com · Eindhoven, Netherlands</footer>
+</main>
+</body>
+</html>
